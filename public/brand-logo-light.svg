@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 130" fill="none">
+  <g stroke="#D1A96D" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 28c13-6 28-5 41 2v68c-13-7-28-8-41-2V28Z" stroke-width="4"/>
+    <path d="M57 30c13-7 28-8 41-2v68c-13-6-28-5-41 2V30Z" stroke-width="4"/>
+    <path d="M57 30v66" stroke-width="2"/>
+    <path d="m85 14-35 47 12 8 34-48-11-7Z" stroke-width="3"/>
+    <path d="m50 61-4 14 16-6" stroke-width="3"/>
+    <path d="m85 14 6-8 11 8-6 7" stroke-width="3"/>
+  </g>
+  <text x="126" y="79" fill="#FCFAF6" font-family="Georgia, 'Times New Roman', serif" font-size="74" letter-spacing="-2">Favour</text>
+  <text x="131" y="112" fill="#D1A96D" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" letter-spacing="1.35">BOOK EDITOR · BOOK COVER DESIGNER</text>
+</svg>
