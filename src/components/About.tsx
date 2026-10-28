@@ -149,7 +149,7 @@ export default function About() {
                     lineHeight: 1,
                   }}
                 >
-                  79
+                  74
                 </strong>
                 <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
                   Fiverr reviews

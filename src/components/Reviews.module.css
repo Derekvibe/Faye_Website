@@ -1,0 +1,244 @@
+.section {
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 90% 0%, var(--bronze-glow), transparent 34rem),
+    var(--ivory);
+}
+
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.intro {
+  max-width: 700px;
+}
+
+.intro h2 {
+  max-width: 15ch;
+  margin-bottom: 1rem;
+}
+
+.description {
+  max-width: 54ch;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex: 0 0 auto;
+  padding: 1rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  box-shadow: var(--shadow-sm);
+}
+
+.ratingValue {
+  color: var(--char);
+  font-family: var(--serif);
+  font-size: 2.7rem;
+  line-height: 1;
+}
+
+.ratingDetails {
+  display: grid;
+  gap: 0.2rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.stars {
+  color: var(--bronze);
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.15rem;
+  align-items: stretch;
+}
+
+.card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: clamp(1.35rem, 2.2vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.featured {
+  grid-column: span 2;
+  background:
+    linear-gradient(140deg, var(--cream-light), transparent 70%),
+    var(--paper);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
+.quoteMark {
+  height: 2.5rem;
+  color: var(--bronze);
+  font-family: var(--serif);
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.source {
+  color: var(--muted-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.quote {
+  flex: 1;
+  margin: 0 0 1.5rem;
+  color: var(--char);
+  font-family: var(--serif);
+  font-size: clamp(1.08rem, 1.5vw, 1.3rem);
+  line-height: 1.55;
+}
+
+.featured .quote {
+  max-width: 65ch;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.avatar {
+  display: grid;
+  width: 2.3rem;
+  height: 2.3rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--bronze-dark);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+
+.authorDetails {
+  display: grid;
+  gap: 0.05rem;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.authorDetails strong {
+  overflow: hidden;
+  color: var(--char);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+}
+
+.linkWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.2rem;
+}
+
+.profileLink {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-full);
+  color: var(--char);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.profileLink:hover {
+  border-color: var(--bronze);
+  background: var(--paper);
+  color: var(--bronze-dark);
+}
+
+@media (max-width: 900px) {
+  .heading {
+    align-items: flex-start;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .heading {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .intro h2 {
+    max-width: 13ch;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .profileLink {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}

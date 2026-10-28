@@ -1,121 +1,74 @@
-"use client";
+import { ArrowUpRight } from "lucide-react";
+import { reviewsData } from "@/data/reviewsData";
+import styles from "./Reviews.module.css";
 
-import React from "react";
+const fiverrProfileUrl = "https://www.fiverr.com/sellers/faye_edit01";
 
 export default function Reviews() {
-  const reviews = [
-    {
-      quote:
-        "“This is my third order processed by Favour. She is an absolute delight to work with. Will solicit her services for all of my publication needs.”",
-      author: "sharon_hilliard",
-      role: "Fiverr buyer",
-    },
-    {
-      quote:
-        "“I was very happy with the work. It exceeded my expectations. Very quick response time. I would definitely recommend and will use again in the future!!”",
-      author: "shanna_philpot",
-      role: "Fiverr buyer",
-    },
-    {
-      quote:
-        "“Favour did amazing work, thank you!”",
-      author: "paragonerin",
-      role: "Fiverr buyer",
-    },
-  ];
-
   return (
-    <section id="reviews" style={{ backgroundColor: "var(--ivory)" }}>
+    <section id="reviews" className={styles.section}>
       <div className="wrap">
-        <div style={{ maxWidth: "760px", marginBottom: "3rem" }}>
-          <p className="eyebrow">Reviews</p>
-          <h2>Kind words from authors.</h2>
+        <div className={styles.heading}>
+          <div className={styles.intro}>
+            <p className="eyebrow">Kind words</p>
+            <h2>Authors trust me with their stories.</h2>
+            <p className={styles.description}>
+              A selection of feedback from authors I’ve helped bring their books
+              closer to publication.
+            </p>
+          </div>
+
+          <div className={styles.rating} aria-label="Rated 4.8 out of 5 on Fiverr">
+            <span className={styles.ratingValue}>4.8</span>
+            <span className={styles.ratingDetails}>
+              <span className={styles.stars} aria-hidden="true">
+                ★★★★★
+              </span>
+              <span>74 Fiverr reviews</span>
+            </span>
+          </div>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "1.4rem",
-          }}
-          className="rev-grid"
-        >
-          {reviews.map((rev, i) => (
-            <div
-              key={i}
-              style={{
-                backgroundColor: "var(--paper)",
-                border: "1px solid var(--line)",
-                borderRadius: "var(--radius-lg)",
-                padding: "2.2rem 1.8rem",
-                display: "flex",
-                flexDirection: "column",
-                gap: "1.2rem",
-                boxShadow: "var(--shadow-sm)",
-              }}
+        <div className={styles.grid}>
+          {reviewsData.map((review, index) => (
+            <article
+              className={`${styles.card} ${index === 0 ? styles.featured : ""}`}
+              key={review.id}
             >
-              <div
-                style={{
-                  color: "var(--bronze)",
-                  letterSpacing: "3px",
-                  fontSize: "1.05rem",
-                }}
-              >
-                &#9733;&#9733;&#9733;&#9733;&#9733;
+              <div className={styles.cardTop}>
+                <span className={styles.quoteMark} aria-hidden="true">
+                  “
+                </span>
+                <span className={styles.source}>Fiverr review</span>
               </div>
 
-              <blockquote
-                style={{
-                  fontFamily: "var(--serif)",
-                  fontSize: "1.25rem",
-                  lineHeight: 1.45,
-                  color: "var(--char)",
-                  margin: 0,
-                  flexGrow: 1,
-                }}
-              >
-                {rev.quote}
-              </blockquote>
+              <blockquote className={styles.quote}>{review.quote}</blockquote>
 
-              <cite
-                style={{
-                  fontStyle: "normal",
-                  fontSize: "0.86rem",
-                  color: "var(--muted)",
-                  borderTop: "1px solid var(--line)",
-                  paddingTop: "0.8rem",
-                  display: "block",
-                }}
-              >
-                <b style={{ color: "var(--char)" }}>{rev.author}</b>, {rev.role}
-              </cite>
-            </div>
+              <footer className={styles.author}>
+                <span className={styles.avatar} aria-hidden="true">
+                  {review.author.charAt(0).toUpperCase()}
+                </span>
+                <span className={styles.authorDetails}>
+                  <strong>{review.author}</strong>
+                  <span>{review.country}</span>
+                </span>
+              </footer>
+            </article>
           ))}
         </div>
 
-        <p
-          style={{
-            marginTop: "1.8rem",
-            fontSize: "0.86rem",
-            color: "var(--muted)",
-          }}
-        >
-          Reviews are quoted from my Fiverr profile. Rating: 4.8 from 79 reviews.
-        </p>
+        <div className={styles.linkWrap}>
+          <a
+            className={styles.profileLink}
+            href={fiverrProfileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read all 74 reviews on Fiverr
+            <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
+        </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 980px) {
-          .rev-grid {
-            grid-template-columns: 1fr 1fr !important;
-          }
-        }
-        @media (max-width: 650px) {
-          .rev-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

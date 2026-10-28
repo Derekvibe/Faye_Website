@@ -73,7 +73,7 @@ export default function RootLayout({
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "4.8",
-                reviewCount: "79",
+                reviewCount: "74",
               },
               serviceType: [
                 "Book proofreading",

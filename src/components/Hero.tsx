@@ -125,7 +125,7 @@ export default function Hero() {
                   </span>
                 </strong>
                 <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>
-                  from 79 Fiverr reviews
+                  from 74 Fiverr reviews
                 </span>
               </div>
 
